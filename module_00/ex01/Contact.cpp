@@ -6,12 +6,22 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:28:17 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 13:47:02 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/22 18:36:52 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
+
+int     ft_isdigit(string s)
+{
+    for (size_t i = 0; i < s.length(); i++)
+    {
+        if(s[i] < '0' || s[i] > '9')
+            return 1;
+    }
+    return(0);
+}
 
 string    Contact::getFname()
 {
@@ -50,7 +60,12 @@ void    Contact::setInfo()
     getline(cin, nickName);
     cout << "enter your dark secret: ";
     getline(cin, darkSecret);
-    cout << "enter your phone number: ";
-    getline(cin, phoneNumber);
-
+    cout << "enter your phone number : ";
+    while (getline(cin, phoneNumber) )
+    {
+        if (ft_isdigit(phoneNumber))
+            cout << "enter a valid phone number : " ; 
+        else
+            break ;
+    }
 }

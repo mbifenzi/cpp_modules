@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:43:52 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 17:37:26 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/22 18:28:24 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <iomanip>
 #include <cstdlib>
+#include <ctype.h>
 
 
 # define	string std::string
@@ -42,4 +43,5 @@ class Contact
 		string	getDsecret();
 		string	getPnumber();
 };
+int		ft_isdigit(char c);
 #endif

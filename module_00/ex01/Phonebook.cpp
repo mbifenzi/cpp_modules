@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:42:27 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 18:07:40 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/22 18:24:01 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,12 @@ void	Phonebook::printContact(int max)
 		cout << "no contacts to show" << endl;
 	else
 	{
-			cout << " ";
 			cout << "    Id    |";
 			cout << setw(11) << "First_name|";
 			cout << setw(11) << "Last_name|";
 			cout << setw(11) << "Nick_Name|" << endl;
 			for(int i = 0; i < max; i++)
 		{
-					
 			cout << setw(11) << i << "|" ;
 			cout << setw(11) << resizeContact(person[i].getFname()) + "|" ;
 			cout << setw(11) << resizeContact(person[i].getLname()) + "|" ;
@@ -60,11 +58,12 @@ void	Phonebook::printContact(int max)
 		}
 			cout << "enter ID :";
 			getline(cin, str);
+			if (str == "")
+				return;
 			id = str[0] - 48;
 			if (str.length() > 1 || id > max)
 				cout << "nothing to show";
 			else
 				searchContact(id);
-			
 	}	
 }
