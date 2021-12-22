@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:42:52 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 15:06:03 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/22 17:49:30 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
 		if (cmd == "add")
 			call.addContact(index);
 		else if (cmd == "search")
-			call.printContact(index, i);
+			call.printContact(i);
 		else if (cmd == "exit")
 			exit (0);
 		i++;
