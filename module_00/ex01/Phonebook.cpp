@@ -6,16 +6,22 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:42:27 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 17:56:46 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/22 18:07:40 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
 
-string	Phonebook::resizeContact(int index)
-{
-	
+string	Phonebook::resizeContact(string contact)
+{	
+	if (contact.length() >= 10)
+	{
+		contact = contact.substr(0, 10);
+		contact[9] = '.';
+	}
+	return (contact);
+		
 }
 void	Phonebook::searchContact(int id)
 {	
@@ -48,9 +54,9 @@ void	Phonebook::printContact(int max)
 		{
 					
 			cout << setw(11) << i << "|" ;
-			cout << setw(11) << person[i].getFname() + "|" ;
-			cout << setw(11) << person[i].getLname() + "|" ;
-			cout << setw(11) << person[i].getNname() + "|" << endl;
+			cout << setw(11) << resizeContact(person[i].getFname()) + "|" ;
+			cout << setw(11) << resizeContact(person[i].getLname()) + "|" ;
+			cout << setw(11) << resizeContact(person[i].getNname()) + "|" << endl;
 		}
 			cout << "enter ID :";
 			getline(cin, str);

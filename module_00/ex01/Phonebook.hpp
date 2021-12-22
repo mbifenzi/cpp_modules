@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:22:47 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 17:55:38 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/22 18:04:02 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Phonebook
 		void	printContact(int max);
 		void	searchContact(int index);
 		void    addContact(int index);
-		string resizeContact(int index);
+		string resizeContact(string info);
 };
 
 #endif
