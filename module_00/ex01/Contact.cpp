@@ -6,13 +6,22 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:28:17 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 18:36:52 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/23 17:24:31 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
 
+int     ft_isascii(string s)
+{
+    for (size_t i = 0; i < s.length(); i++)
+    {
+        if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
+            return (1);
+    }
+    return (0);
+}
 int     ft_isdigit(string s)
 {
     for (size_t i = 0; i < s.length(); i++)
@@ -52,14 +61,37 @@ string    Contact::getPnumber()
 void    Contact::setInfo()
 {
     cout << "enter your first name: ";
-    getline(cin, firstName);
-    // std::cout << firstName << std::endl;
+    while(getline(cin, firstName))
+    {
+        if (!ft_isascii(firstName))
+            cout << "enter a valid first name : ";
+        else
+            break ;
+    }
     cout << "enter your last name: ";
-    getline(cin, lastName);
+    while (getline(cin, lastName))
+    {
+        if (!ft_isascii(lastName))
+            cout << "enter a valid Last name : ";
+        else
+            break ;
+    }
     cout << "enter your nick name: ";
-    getline(cin, nickName);
+    while (getline(cin, nickName))
+    {
+        if (!ft_isascii(nickName))
+            cout << "enter a valid nick name : ";
+        else
+            break ;
+    }
     cout << "enter your dark secret: ";
-    getline(cin, darkSecret);
+    while (getline(cin, darkSecret))
+    {
+        if (!ft_isascii(darkSecret))
+            cout << "enter a valid dark secret : ";
+        else
+            break ;
+    }
     cout << "enter your phone number : ";
     while (getline(cin, phoneNumber) )
     {
