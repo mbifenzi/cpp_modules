@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:42:27 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 18:24:01 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/23 16:53:42 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ void	Phonebook::printContact(int max)
 {		
 	string str;
 	int id;
-	if (max == 0)
-		cout << "no contacts to show" << endl;
-	else
-	{
-			cout << "    Id    |";
+	// if (max == 0)
+	// 	cout << "no contacts to show" << endl;
+	// else
+	// {
+			cout << setw(11) << "    Id    |";
 			cout << setw(11) << "First_name|";
 			cout << setw(11) << "Last_name|";
 			cout << setw(11) << "Nick_Name|" << endl;
 			for(int i = 0; i < max; i++)
 		{
-			cout << setw(11) << i << "|" ;
+			cout << setw(10) << i << "|" ;
 			cout << setw(11) << resizeContact(person[i].getFname()) + "|" ;
 			cout << setw(11) << resizeContact(person[i].getLname()) + "|" ;
 			cout << setw(11) << resizeContact(person[i].getNname()) + "|" << endl;
@@ -61,9 +61,9 @@ void	Phonebook::printContact(int max)
 			if (str == "")
 				return;
 			id = str[0] - 48;
-			if (str.length() > 1 || id > max)
-				cout << "nothing to show";
+			if (str.length() > 1 || id > max - 1)
+				cout << "nothing to show" << endl;
 			else
 				searchContact(id);
-	}	
+	// }	
 }

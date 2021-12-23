@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:42:52 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 18:09:59 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/23 16:52:05 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,12 @@ int main()
 			i++;
 		}
 		else if (cmd == "search")
-			call.printContact(i);
+		{
+			if (i == 0)
+				cout << "no contacts to show" << endl;
+			else
+				call.printContact(i);			
+		}
 		else if (cmd == "exit")
 			exit (0);
 	} while (1);
