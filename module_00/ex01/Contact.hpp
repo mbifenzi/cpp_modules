@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 11:43:52 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/22 18:28:24 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/24 16:15:09 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 # define CONTACT_HPP
 #include <iostream>
 #include <string>
-#include <stdlib.h>
 #include <iomanip>
-#include <cstdlib>
-#include <ctype.h>
 
 
 # define	string std::string
@@ -43,5 +40,6 @@ class Contact
 		string	getDsecret();
 		string	getPnumber();
 };
-int		ft_isdigit(char c);
+int		ft_isdigit(string s);
+int     ft_isascii(string s);
 #endif

@@ -6,14 +6,14 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:42:27 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/23 16:53:42 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/24 16:29:30 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
 
-string	Phonebook::resizeContact(string contact)
+string	resizeContact(string contact)
 {	
 	if (contact.length() >= 10)
 	{
@@ -27,8 +27,8 @@ void	Phonebook::searchContact(int id)
 {	
 	cout << "first name : " << person[id].getFname() << endl;
 	cout << "last name : " << person[id].getLname() << endl;
-	cout << "nick name : " << person[id].getNname() << endl;
-	cout << "dark secret : " << person[id].getDsecret() << endl;
+	cout << "nickname : " << person[id].getNname() << endl;
+	cout << "darkest secret : " << person[id].getDsecret() << endl;
 	cout << "phone number : " << person[id].getPnumber() << endl;
 }
 
@@ -41,11 +41,7 @@ void	Phonebook::printContact(int max)
 {		
 	string str;
 	int id;
-	// if (max == 0)
-	// 	cout << "no contacts to show" << endl;
-	// else
-	// {
-			cout << setw(11) << "    Id    |";
+			cout << setw(11) << "index|";
 			cout << setw(11) << "First_name|";
 			cout << setw(11) << "Last_name|";
 			cout << setw(11) << "Nick_Name|" << endl;
@@ -65,5 +61,4 @@ void	Phonebook::printContact(int max)
 				cout << "nothing to show" << endl;
 			else
 				searchContact(id);
-	// }	
 }

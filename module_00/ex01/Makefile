@@ -6,7 +6,7 @@
 #    By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 19:00:30 by mbifenzi          #+#    #+#              #
-#    Updated: 2021/12/22 13:47:27 by mbifenzi         ###   ########.fr        #
+#    Updated: 2021/12/24 15:18:48 by mbifenzi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ SRC =	main.cpp Contact.cpp Phonebook.cpp
 all :	$(NAME)
 
 bonus : $(BONUS_NAME)
-		
+
 $(NAME): $(SRC)
-		@clang++ -Wall -Wextra -Werror $(SRC) -o $(NAME) -fsanitize=address -g
+		@clang++ -Wall -Wextra -Werror $(SRC) -o $(NAME)
 
 clean:
 	@rm -f $(OBJECT)

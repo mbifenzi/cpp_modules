@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 18:45:35 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/15 19:23:38 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/24 16:00:34 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main(int argc, char **argv)
 			std::cout << " ";
 		}
 			std::cout << std::endl;
-		
     }
     return (0);
 }

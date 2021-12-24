@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:28:17 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/23 17:24:31 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/24 15:25:06 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int     ft_isascii(string s)
 }
 int     ft_isdigit(string s)
 {
+    if (s == "")
+        return  (1);
     for (size_t i = 0; i < s.length(); i++)
     {
         if(s[i] < '0' || s[i] > '9')
@@ -76,7 +78,7 @@ void    Contact::setInfo()
         else
             break ;
     }
-    cout << "enter your nick name: ";
+    cout << "enter your nickname: ";
     while (getline(cin, nickName))
     {
         if (!ft_isascii(nickName))
@@ -84,7 +86,7 @@ void    Contact::setInfo()
         else
             break ;
     }
-    cout << "enter your dark secret: ";
+    cout << "enter your darkest secret: ";
     while (getline(cin, darkSecret))
     {
         if (!ft_isascii(darkSecret))
