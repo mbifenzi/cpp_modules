@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombiehorde.cpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:33:44 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/27 00:01:17 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/27 00:22:35 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Zombie* zombieHorde(int N, string name )
     
     while (N--)
     {
-        newName = name + "Number" + std::to_string(N);
+        newName = name + " Number " + std::to_string(N);
         z[N].setName(newName);
     }
     return (z);

@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:33:41 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/27 00:04:10 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/27 00:19:16 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,6 @@ int main()
     {
         zombies[i].announce();
     }
+    delete[] zombies;
+    return 0;
 }
