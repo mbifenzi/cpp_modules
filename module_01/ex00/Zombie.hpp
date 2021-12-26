@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 13:01:02 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/25 17:56:05 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/27 00:32:19 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class Zombie
         ~Zombie();
         void    announce(void);
         void    setName(string name);
-        string getName();
 };
 Zombie* newZombie( string name );
 void randomChump( string name );
