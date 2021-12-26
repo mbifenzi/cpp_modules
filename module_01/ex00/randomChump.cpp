@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/25 16:19:38 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/26 00:25:37 by mbifenzi         ###   ########.fr       */
+/*   Created: 2021/12/25 17:56:18 by mbifenzi          #+#    #+#             */
+/*   Updated: 2021/12/25 18:00:41 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+void randomChump( string name )
 {
-    Zombie man("Zombie Man");
-    Zombie *z = newZombie("Zombie");
-    delete(z);
+    Zombie *z = newZombie(name);
+    
 }

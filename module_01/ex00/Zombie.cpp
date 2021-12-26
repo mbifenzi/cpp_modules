@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/25 16:19:38 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/26 00:25:37 by mbifenzi         ###   ########.fr       */
+/*   Created: 2021/12/25 13:10:12 by mbifenzi          #+#    #+#             */
+/*   Updated: 2021/12/26 00:23:20 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+Zombie::Zombie(string name)
 {
-    Zombie man("Zombie Man");
-    Zombie *z = newZombie("Zombie");
-    delete(z);
+    _name = name;
+    announce();
+}
+
+void    Zombie::announce(void)
+{
+    cout << _name << " BraiiiiiiinnnzzzZ..." << endl;
+}
+Zombie::~Zombie()
+{
+    cout << "rip " << _name << endl;
 }

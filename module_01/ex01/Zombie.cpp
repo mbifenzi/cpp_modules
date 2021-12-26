@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/25 16:19:38 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/26 00:25:37 by mbifenzi         ###   ########.fr       */
+/*   Created: 2021/12/26 23:33:38 by mbifenzi          #+#    #+#             */
+/*   Updated: 2021/12/26 23:58:57 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+Zombie::Zombie(string name)
 {
-    Zombie man("Zombie Man");
-    Zombie *z = newZombie("Zombie");
-    delete(z);
+    _name = name;
 }
+
+Zombie::Zombie()
+{
+
+}
+
+void    Zombie::setName(string name)
+{
+    _name = name;
+}
+
+
+

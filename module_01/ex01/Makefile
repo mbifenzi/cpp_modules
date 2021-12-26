@@ -6,13 +6,13 @@
 #    By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 19:00:30 by mbifenzi          #+#    #+#              #
-#    Updated: 2021/12/25 17:08:48 by mbifenzi         ###   ########.fr        #
+#    Updated: 2021/12/27 00:04:53 by mbifenzi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Zombie
 
-SRC =	Zombie.cpp newZombie.cpp main.cpp
+SRC =	Zombie.cpp ZombieHord.cpp main.cpp
 
 all :	$(NAME)
 
