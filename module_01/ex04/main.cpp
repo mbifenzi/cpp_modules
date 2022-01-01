@@ -6,14 +6,12 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 15:47:12 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/31 15:44:46 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2021/12/31 16:28:56 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <iomanip>
 #include <string>
-#include <ctime>
 #include <fstream>
 
 # define	string std::string
@@ -34,7 +32,6 @@ void    searchAndReplace(string& line, string s1, string s2)
     	line.erase(line.begin()+pos, line.begin() + pos + s1.length());
     	line.insert(pos, s2);
 	}
-	(void)s2;
 }
 
 int main(int argc, char **argv)
@@ -44,13 +41,22 @@ int main(int argc, char **argv)
         cout << "INVALID ARGUMENTS" << endl;
         exit (0);
     }
-	
     string outfileName(argv[1]);
     ifstream infile(argv[1]);
     ofstream outfile(outfileName.append(".replace"));
     string s1(argv[2]);
     string s2(argv[3]);
 	string line;
+    if (!infile)
+    {
+        cout << "file not found" << endl;
+        exit (0);
+    }
+    if (s1.empty() || s2.empty())
+    {
+        cout << "Error: empty string" << endl;
+        exit (0);
+    }
     while (getline(infile, line))
     {
 		string &lineRef(line);

@@ -6,13 +6,13 @@
 #    By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 19:00:30 by mbifenzi          #+#    #+#              #
-#    Updated: 2021/12/31 16:07:31 by mbifenzi         ###   ########.fr        #
+#    Updated: 2021/12/31 16:06:28 by mbifenzi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replace
+NAME = Karen
 
-SRC =	main.cpp
+SRC =	main.cpp Karen.cpp
 
 all :	$(NAME)
 
