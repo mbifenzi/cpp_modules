@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 13:10:12 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/26 00:23:20 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/06 23:20:43 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void    Zombie::announce(void)
 }
 Zombie::~Zombie()
 {
-    cout << "rip " << _name << endl;
+    cout << _name << " destroyed " <<endl;
 }

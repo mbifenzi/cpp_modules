@@ -6,11 +6,11 @@
 #    By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 19:00:30 by mbifenzi          #+#    #+#              #
-#    Updated: 2022/01/03 12:44:16 by mbifenzi         ###   ########.fr        #
+#    Updated: 2022/01/03 12:44:29 by mbifenzi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed0
+NAME = Fixed1
 
 SRC =	main.cpp Fixed.cpp
 

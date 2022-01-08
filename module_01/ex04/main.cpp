@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 15:47:12 by mbifenzi          #+#    #+#             */
-/*   Updated: 2021/12/31 16:28:56 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/07 00:23:16 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int main(int argc, char **argv)
         cout << "Error: empty string" << endl;
         exit (0);
     }
+
     while (getline(infile, line))
     {
 		string &lineRef(line);
@@ -68,7 +69,6 @@ int main(int argc, char **argv)
             break ;
         }
     }
-
     infile.close();
     outfile.close();
 }

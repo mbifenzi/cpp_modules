@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 15:58:17 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/03 12:39:53 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/06 01:14:06 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,19 @@
 
 Fixed::Fixed()
 {
-    // _fixed = 0;
+    _fixed = 0;
     cout << "Default constructor called" << endl;
 }
-
+Fixed::Fixed(const int i)
+{
+	cout << "int constructor called" << endl;
+	_fixed = i << _bits;
+}
+Fixed::Fixed(const float i)
+{
+	cout << "Float constructor called" << endl;
+	_fixed = (float(i *(1 << _bits)));
+}
 Fixed::~Fixed()
 {
     cout << "Destructor called" << endl;
@@ -42,6 +51,13 @@ Fixed &Fixed::operator=(const Fixed &obj)
 	return (*this);
 }
 
+std::ostream	&operator<<( std::ostream &output, Fixed const &obj)
+{
+	output << obj.toFloat();
+	return (output);
+}
+
+
 int	Fixed::getRawBits(void) const
 {
 	cout << "getRawBits member function called" << endl;
@@ -52,4 +68,14 @@ void	Fixed::setRawBits(int const raw)
 {
     cout << "setRawBits member function called" << endl;
 	_fixed = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+    return((float)this->_fixed / (float)(1<<Fixed::_bits));
+}
+
+int Fixed::toInt(void) const
+{
+    return((int)this->_fixed>>Fixed::_bits);
 }
