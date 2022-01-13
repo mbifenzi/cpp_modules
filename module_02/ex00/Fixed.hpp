@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 15:56:43 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/03 12:39:46 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/13 00:28:21 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ private:
     static int const _bits;
 public:
     Fixed();
+    Fixed(int n);
     Fixed(const Fixed &obj);
     ~Fixed();
-    Fixed &		operator=( Fixed const & obj );
+    Fixed 	&operator=( Fixed const & obj );
     int getRawBits(void) const;
     void setRawBits(int const raw);
 };

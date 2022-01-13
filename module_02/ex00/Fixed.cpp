@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 15:58:17 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/03 12:39:53 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/13 00:28:11 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@
 
 Fixed::Fixed()
 {
-    // _fixed = 0;
+    _fixed = 10;
     cout << "Default constructor called" << endl;
 }
+
+
 
 Fixed::~Fixed()
 {

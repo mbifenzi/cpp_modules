@@ -5,20 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/01 15:55:54 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/13 00:27:46 by mbifenzi         ###   ########.fr       */
+/*   Created: 2022/01/12 15:20:01 by mbifenzi          #+#    #+#             */
+/*   Updated: 2022/01/12 16:20:42 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
 int main()
 {
-Fixed a;
-Fixed b(a);
-Fixed c;
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
+    ClapTrap A("eren");
+    ClapTrap B("mikasa");
+
+    cout << A.getAttackDamage() << endl;
+
+    A.attack(B.getName());
+    B.takeDamage(A.getAttackDamage());
+    B.beRepaired(10);
+    cout << A << endl;
+    cout << B << endl;
 }

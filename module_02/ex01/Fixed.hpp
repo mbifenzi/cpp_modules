@@ -6,12 +6,13 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 15:56:43 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/06 00:46:54 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/10 21:48:44 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Fixed
 {

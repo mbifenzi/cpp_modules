@@ -5,20 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/01 15:55:54 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/13 00:27:46 by mbifenzi         ###   ########.fr       */
+/*   Created: 2022/01/12 15:20:01 by mbifenzi          #+#    #+#             */
+/*   Updated: 2022/01/13 01:04:29 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-Fixed a;
-Fixed b(a);
-Fixed c;
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
+    FragTrap A("Eren");
+    FragTrap B("Mikasa");
+    FragTrap C;
+
+    C = A;
+    cout << "Before : " << endl;
+    cout << A << endl;
+    cout << B << endl;
+    cout << C << endl;
+    A.attack(B.getName());
+    B.takeDamage(A.getAttackDamage());
+    B.beRepaired(10);
+    C.highFivesGuys();
+    cout << "After : " << endl;
+    cout << A << endl;
+    cout << B << endl;
 }
