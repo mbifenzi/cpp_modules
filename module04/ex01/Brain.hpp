@@ -1,47 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DogCat.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 01:49:05 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/14 04:42:07 by mbifenzi         ###   ########.fr       */
+/*   Created: 2022/01/14 02:09:22 by mbifenzi          #+#    #+#             */
+/*   Updated: 2022/01/14 04:09:37 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOGCAT_HPP
-#define DOGCAT_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat: public Animal
+class Brain
 {
     private:
-		Brain* _Brain;
+        std::string _Ideas[100];
 	public:
-		Cat();
-		Cat( const Cat & obj);
-		~Cat();
-		Cat &operator=(Cat const& obj);
-		void makeSound() const;
-		std::string getBrains(int index);
+		Brain();
+		Brain(Brain const &obj);
+		~Brain();
+		Brain &operator=(Brain const& obj);
+		std::string getIdeas(int index)const;
+		void setIdeas(int index, std::string idea);
 };
-
-class Dog: public Animal
-{
-    private:
-		Brain* _Brain;
-    public:
-        Dog();
-		Dog(Dog const &obj);
-		~Dog();
-		Dog &operator=(Dog const& obj);
-        void makeSound() const;
-		std::string getBrains(int index);
-};
-
 #endif

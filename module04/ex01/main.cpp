@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:18:29 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/14 01:52:33 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/14 04:44:43 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,26 @@
 
 int main()
 {
-    {
-        const Animal* meta = new Animal();
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
-        std::cout << j->getType() << " " << std::endl;
-        std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); //will output the cat sound!
-        j->makeSound();
-        meta->makeSound();
+    Animal *animals[10];
 
-        delete i;
-        delete j;
-        delete meta;
-    }
-        std::cout << "----------------------------------" << std::endl;
+    for (int i = 0; i < 10; i++)
     {
-        const WrongAnimal* wrongMeta = new WrongAnimal();
-        const WrongAnimal* w = new WrongCat();
-        wrongMeta->makeSound();
-        w->makeSound();
-        delete wrongMeta;
-        delete w;
+        if (i % 2 == 0)
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
     }
+    for (int i = 0; i < 10; i++)
+    {
+        delete animals[i];
+    }
+    Cat *cat = new Cat();
+    Cat DeepCat(*cat);
+    delete cat;
+    std::cout << DeepCat.getType() + " - - - " << DeepCat.getBrains(10) << std::endl;
+
+    Dog *dog = new Dog();
+    Dog DeepDog(*dog);
+    delete dog;
+    std::cout << DeepDog.getType() + " - - - " << DeepDog.getBrains(10)<< std::endl;
 }
