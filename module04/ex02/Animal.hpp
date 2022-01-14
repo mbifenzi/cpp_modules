@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 16:19:27 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/14 15:17:54 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/14 15:18:10 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Animal
 		
         std::string    getType() const;
         void    setType(std::string type);
-		virtual void makeSound()const;
+		virtual void makeSound()const = 0;
 };
 
 #endif
