@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   DogCat.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 19:05:47 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/13 19:55:31 by mbifenzi         ###   ########.fr       */
+/*   Created: 2022/01/14 01:50:23 by mbifenzi          #+#    #+#             */
+/*   Updated: 2022/01/14 01:51:32 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "DogCat.hpp"
 
+/*-------------------------- Cat --------------------------*/
 Cat::Cat()
 {
 	_Type = "Cat";
@@ -38,4 +39,35 @@ Cat &				Cat::operator=( Cat const & obj )
 void Cat::makeSound()const
 {
 	std::cout << "SOUND ON ======= MEOW MEOW MEOW" << std::endl;
+}
+
+/*-------------------------- Dog --------------------------*/
+
+Dog::Dog() 
+{
+	_Type = "Dog";
+	std::cout << "Dog's default constructer called!" << std::endl;
+}
+
+Dog::Dog( const Dog & src )
+{
+	std::cout << "Dog's copy constructer called!" << std::endl;
+	*this = src;
+}
+
+Dog::~Dog()
+{
+	std::cout << "Dog's destructer called!" << std::endl;
+	
+}
+
+Dog &				Dog::operator=( Dog const & obj )
+{
+	_Type = obj._Type;
+	return *this;
+}
+
+void Dog::makeSound() const
+{
+	std::cout << "SOUND ON ======= HAWHAW HAWHAW HAWHAW!" << std::endl;
 }

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   DogCat.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 16:30:38 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/13 19:28:38 by mbifenzi         ###   ########.fr       */
+/*   Created: 2022/01/14 01:49:05 by mbifenzi          #+#    #+#             */
+/*   Updated: 2022/01/14 01:49:59 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef DOGCAT_HPP
+#define DOGCAT_HPP
 
 #include <iostream>
 #include <string>
@@ -29,6 +29,18 @@ class Cat: public Animal
 		~Cat();
 		Cat &operator=(Cat const& obj);
 		 void makeSound() const;
+};
+
+class Dog: public Animal
+{
+    private:
+    
+    public:
+        Dog();
+		Dog(Dog const &obj);
+		~Dog();
+		Dog &operator=(Dog const& obj);
+        void makeSound() const;
 };
 
 #endif
