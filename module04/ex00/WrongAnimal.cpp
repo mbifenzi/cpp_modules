@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 19:45:12 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/13 19:55:10 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/15 19:02:09 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 WrongAnimal::WrongAnimal()
 {
-	std::cout << "WrongAnimal's default constructed called!" << std::endl;
+	std::cout << "WrongAnimal's default constructer called!" << std::endl;
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal & src )
 {
-	std::cout << "WrongAnimal's copy constructed called!" << std::endl;
+	std::cout << "WrongAnimal's copy constructer called!" << std::endl;
 	*this = src;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal's destructed called!" << std::endl;
+	std::cout << "WrongAnimal's destructer called!" << std::endl;
 }
 
 WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & src )
