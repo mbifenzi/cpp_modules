@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 03:28:57 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/17 19:08:29 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/17 19:36:58 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void    ShrubberyCreationForm::execForm(Bureaucrat const &executor) const
 {
-    if (this->_state == false)
+    if (this->getState() == false)
         throw(notSignedException());
-    if (executor.getGrade() > _execGrade)
+    if (executor.getGrade() > getExecGrade())
 		throw(notExecutedException());
 
 	std::string target(_target);

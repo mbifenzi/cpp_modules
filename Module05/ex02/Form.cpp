@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:09:36 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/17 19:09:13 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/17 19:34:47 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		Form::getSignGrade() const
 	return _signGrade;
 }
 
-bool	Form::getState()
+bool	Form::getState() const
 {
 	return _state;
 }
@@ -93,7 +93,7 @@ const char* Form::notExecutedException::what() const throw()
 
 void	Form::execForm(Bureaucrat const &executor) const
 {
-	if (this->_execGrade == false)
+	if (this->getExecGrade() == false)
         throw(notSignedException());
     if (executor.getGrade() > _execGrade)
 		throw(notExecutedException());

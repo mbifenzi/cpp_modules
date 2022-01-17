@@ -6,13 +6,14 @@
 #    By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 19:00:30 by mbifenzi          #+#    #+#              #
-#    Updated: 2022/01/17 18:48:23 by mbifenzi         ###   ########.fr        #
+#    Updated: 2022/01/17 19:20:11 by mbifenzi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Form
 
-SRC =	Bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+SRC =	Bureaucrat.cpp main.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp
 
 all :	$(NAME)
 

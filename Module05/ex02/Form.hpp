@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 17:09:40 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/17 19:06:02 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/17 19:31:46 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Bureaucrat;
 class Form
 {
-protected:
+private:
     std::string const _name;
     int const _signGrade;
     int const _execGrade;
@@ -54,7 +54,7 @@ public:
     std::string getName() const;
     int  getSignGrade() const;
     int getExecGrade() const;
-    bool getState();
+    bool getState() const;
     void    beSigned(Bureaucrat &person);
     virtual void    execForm(Bureaucrat const &person)const;
 };

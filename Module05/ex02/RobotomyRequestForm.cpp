@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:01:28 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/17 19:07:19 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/17 19:36:32 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void    RobotomyRequestForm::execForm(Bureaucrat const& executor)const
 {
-    if(this->_state == false)
+    if(this->getState() == false)
 		throw notSignedException();
-    if (executor.getGrade() > _execGrade)
+    if (executor.getGrade() > getExecGrade())
 		throw (notExecutedException());
 	int rando = rand() % 2;
 	if(rando == 0)
