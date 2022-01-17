@@ -6,13 +6,13 @@
 #    By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 19:00:30 by mbifenzi          #+#    #+#              #
-#    Updated: 2022/01/17 01:32:35 by mbifenzi         ###   ########.fr        #
+#    Updated: 2022/01/14 16:36:13 by mbifenzi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Bureaucrat
 
-SRC =	Bureaucrat.cpp main.cpp Form.cpp
+SRC =	Bureaucrat.cpp main.cpp
 
 all :	$(NAME)
 

@@ -6,12 +6,11 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 18:03:28 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/17 01:39:07 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/17 00:19:14 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -74,16 +73,6 @@ int Bureaucrat::getGrade()
 std::string Bureaucrat::getName()
 {
 	return this->_Name;
-}
-
-void	Bureaucrat::signForm(Form &obj)
-{
-	if (obj.getState())
-		std::cout << this->_Name << " signs " << obj.getName() << std::endl;
-	else
-		std::cout << this->_Name << "cannot signs " << obj.getName() <<" because he has a low grade "<<std::endl;
-
-
 }
 
 std::ostream &   operator<<(std::ostream& output, Bureaucrat &obj)  

@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 01:06:09 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/17 01:41:15 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/15 19:42:52 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include "Form.hpp"
 
-class Form;
 class Bureaucrat
 {
 private:
@@ -42,7 +40,6 @@ public:
 
     std::string getName();
     int getGrade();
-    void signForm(Form &obj);
 };
 
 std::ostream&   operator<<(std::ostream &output, Bureaucrat &obj);    
