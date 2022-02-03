@@ -1,32 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/15 01:06:05 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/02/01 15:40:26 by mbifenzi         ###   ########.fr       */
+/*   Created: 2022/02/03 04:27:17 by mbifenzi          #+#    #+#             */
+/*   Updated: 2022/02/03 04:27:34 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "main.hpp"
 
-int main()
-{
-    try
-    {
-        Bureaucrat person("simo", 1);
-        std::cout << person << std::endl;
-        Form    letter("bif",10, 12);
-        letter.beSigned(person);
-        std::cout << letter << std::endl;
-    }  
-    catch(const std::exception& exc)
-    {
-        std::cerr << exc.what() << '\n';
-    }
-    
-    
-}
