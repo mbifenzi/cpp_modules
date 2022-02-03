@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 13:10:01 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/02/03 04:32:28 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/02/03 19:52:36 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	printFloat(float _float)
 void	printDouble(double _double)
 {
 	if (_double -	static_cast<int>(_double) == (double)0)
-		std::cout << "float: " << _double << ".0f" << std::endl;
+		std::cout << "double: " << _double << ".0" << std::endl;
 	else
-		std::cout << "float: " << _double << "f" << std::endl;
+		std::cout << "double: " << _double << std::endl;
 }
 
 
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     if (argc != 2)
 	{
 		std::cout << "Invalid Arguments" << std::endl;
-		return (1);
+		return (0);
 	}
 	std::string arg = std::string(argv[1]);
 	if (strlen(argv[1]) == 1 && ((argv[1][0] < 48 && argv[1][0] >= 32) || (argv[1][0] > 57 && argv[1][0] < 127)))
@@ -83,27 +83,80 @@ int main(int argc, char **argv)
 			return 0;
 		}
 		else  if (arg.find_last_of('f') != std::string::npos && arg.find('.') != std::string::npos)
-    	{
-        	float f;
-			f = std::stof(s);
-       		std::cout << "char: impossible\n";
-			std::cout << "int: impossible\n";
-			std::cout << "float: " << arg + 'f' << std::endl;
-			std::cout << "double: " << arg;
-			return 0;
-    	}
-		else if (arg.find('.') != std::string::npos && arg.find_last_of('f') == std::string::npos)
 		{
-			
+			float	f;
+			double d;
+			int i;
+			f = 0.0;
+			d = 0.0;
+			i = 0;
+			std::cout << "char: impossible\n";
+			try
+			{
+				f = std::stof(arg);
+				d = std::stod(arg);
+				i = stoi(arg);
+			}
+			catch(const std::exception& e)
+			{
+				std::cerr << "Something s Wrong with this Number" << std::endl;
+				return(0);
+			}
+			printInt(i);
+			printFloat(f);
+			printDouble(d);
+			return 0;
 		}
+	}
+	else if (arg.find('.') != std::string::npos)
+	{
+		double d;
+		float f;
+		int i;
+		d = 0.0;
+		f = 0.0f;
+		i = 0;
+		std::cout << "char: impossible\n";
+		try
+		{
+			d = std::stod(arg);	
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << "Something s Wrong with this Number" << std::endl;
+			return(0);
+		}
+		printInt(i);
+		printFloat(f);
+		printDouble(d);
+		return 0;
 	}
 	else
 	{
-		// catch(const std::exception& e)
-		// {
-		// 	std::cerr << e.what() << '\n';
-		// }
-		std::cerr << "error" << std::endl;
-		
+		int i;
+		double d;
+		float	f;
+		f = 0.0;
+		d = 0.0;
+		i = 0;
+		try
+		{
+			i = stoi(arg);
+			d = std::stod(arg);
+			f = std::stof(arg);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << "Something s Wrong with this Number" << std::endl;
+			return(0);
+		}
+		if (i < 0 || i > 127)
+			std::cout << "char: impossible\n";
+		else
+			std::cout << "char : " << static_cast<char>(i) << std::endl;
+		printInt(i);
+		printFloat(f);
+		printDouble(d);
+		return 0;
 	}
 }
