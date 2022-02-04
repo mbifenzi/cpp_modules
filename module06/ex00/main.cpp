@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 13:10:01 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/02/03 19:52:36 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/02/04 16:15:21 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	printInt(int _int)
 void	printFloat(float _float)
 {
 	if (_float - static_cast<int>(_float) != (float)0)
-		std::cout << "double: " << _float << std::endl;
+		std::cout << "float: " << _float << 'f' << std::endl;
 	else
-		std::cout << "double: " << _float << ".0" << std::endl;
+		std::cout << "float: " << _float << ".0f" << std::endl;
 }
 
 
 void	printDouble(double _double)
 {
-	if (_double -	static_cast<int>(_double) == (double)0)
+	if (_double - static_cast<int>(_double) == (double)0)
 		std::cout << "double: " << _double << ".0" << std::endl;
 	else
 		std::cout << "double: " << _double << std::endl;
@@ -45,30 +45,19 @@ void	printDouble(double _double)
 
 int main(int argc, char **argv)
 {
-    // int		_int;
-	// float	_float;
-	// double	_double;
-	char	_char;
+	// char	_char;
     if (argc != 2)
 	{
 		std::cout << "Invalid Arguments" << std::endl;
 		return (0);
 	}
 	std::string arg = std::string(argv[1]);
-	if (strlen(argv[1]) == 1 && ((argv[1][0] < 48 && argv[1][0] >= 32) || (argv[1][0] > 57 && argv[1][0] < 127)))
-	{
-		_char = argv[1][0];
-		printChar(_char);
-		printInt(static_cast<int>(_char));
-		printFloat(static_cast<float>(_char));
-		printDouble(static_cast<double>(_char));
-		return 0;
-	}
-	else if (arg.find_last_of("f") != std::string::npos)
+
+	if (arg.find_last_of("f") != std::string::npos)
 	{
 		if (!arg.compare("+inff") || !arg.compare("-inff") || !arg.compare("nanf"))
 		{
-			std::cout << "char: impossible\n";
+			std::cout << "char: non displayable\n";
 			std::cout << "int: impossible\n";
 			std::cout << "float: " << arg << std::endl;
 			std::cout << "double: " << arg.substr(0, arg.size() - 1);
@@ -76,7 +65,7 @@ int main(int argc, char **argv)
 		}
 		else if (!arg.compare("+inf") || !arg.compare("-inf") || !arg.compare("nan"))
 		{
-			std::cout << "char: impossible\n";
+			std::cout << "char: non displayable\n";
 			std::cout << "int: impossible\n";
 			std::cout << "float: " << arg << std::endl;
 			std::cout << "double: " << arg.substr(0, arg.size());
@@ -90,7 +79,7 @@ int main(int argc, char **argv)
 			f = 0.0;
 			d = 0.0;
 			i = 0;
-			std::cout << "char: impossible\n";
+			std::cout << "char: non displayable\n";
 			try
 			{
 				f = std::stof(arg);
@@ -116,10 +105,12 @@ int main(int argc, char **argv)
 		d = 0.0;
 		f = 0.0f;
 		i = 0;
-		std::cout << "char: impossible\n";
+		std::cout << "char: non displayable\n";
 		try
 		{
-			d = std::stod(arg);	
+				f = std::stof(arg);
+				d = std::stod(arg);
+				i = stoi(arg);
 		}
 		catch(const std::exception& e)
 		{
@@ -150,8 +141,8 @@ int main(int argc, char **argv)
 			std::cerr << "Something s Wrong with this Number" << std::endl;
 			return(0);
 		}
-		if (i < 0 || i > 127)
-			std::cout << "char: impossible\n";
+		if ((i < 0 || i > 127) || (i < 32))
+			std::cout << "char: non displayable\n";
 		else
 			std::cout << "char : " << static_cast<char>(i) << std::endl;
 		printInt(i);
