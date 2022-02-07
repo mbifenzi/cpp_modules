@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 13:10:01 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/02/04 16:15:21 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/02/04 16:46:45 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int main(int argc, char **argv)
 
 	if (arg.find_last_of("f") != std::string::npos)
 	{
+		std::cout << "WWWWW" << std::endl;
 		if (!arg.compare("+inff") || !arg.compare("-inff") || !arg.compare("nanf"))
 		{
 			std::cout << "char: non displayable\n";
@@ -142,7 +143,7 @@ int main(int argc, char **argv)
 			return(0);
 		}
 		if ((i < 0 || i > 127) || (i < 32))
-			std::cout << "char: non displayable\n";
+			std::cout << "char : non displayable\n";
 		else
 			std::cout << "char : " << static_cast<char>(i) << std::endl;
 		printInt(i);

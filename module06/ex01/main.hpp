@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/29 15:50:25 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/02/06 15:34:19 by mbifenzi         ###   ########.fr       */
+/*   Created: 2022/02/05 18:25:58 by mbifenzi          #+#    #+#             */
+/*   Updated: 2022/02/05 18:27:28 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
+#ifndef MAIN_HPP
+#define MAIN_HPP
 
-HumanA::HumanA(string name, Weapon &type) : _a(type)
-{
-    _name = name;
-}
+#include <stdint.h>
+#include <iostream>
 
-HumanA::~HumanA()
+struct Data
 {
-    cout << "HumanA destroyed" << endl;
-}
+	int		testVar;
+	char	testVar2;
+};
 
-void    HumanA::attack()
-{
-    cout << _name << " attacks with his " << _a.getWeapon() << endl;
-}
-
-void    HumanA::setType(string type)
-{
-    _a = type;
-}
+#endif
