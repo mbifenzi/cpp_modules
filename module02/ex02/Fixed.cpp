@@ -6,7 +6,7 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 15:58:17 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/25 03:03:04 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/01/25 04:20:41 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,100 @@ float Fixed::toFloat(void) const
 int Fixed::toInt(void) const
 {
     return((int)this->_fixed>>Fixed::_bits);	
+}
+
+bool	Fixed::operator==( Fixed const & obj )
+{
+	return this->_fixed == obj._fixed;
+}
+
+bool	Fixed::operator>( Fixed const & obj )
+{
+	return this->_fixed > obj._fixed;
+}
+
+bool	Fixed::operator<( Fixed const & obj )
+{
+	return this->_fixed < obj._fixed;
+}
+
+bool	Fixed::operator>=( Fixed const & obj )
+{
+	return this->_fixed >= obj._fixed;
+}
+
+bool	Fixed::operator<=( Fixed const & obj )
+{
+	return this->_fixed <= obj._fixed;
+}
+
+bool	Fixed::operator!=( Fixed const & obj )
+{
+	return this->_fixed != obj._fixed;
+}
+
+Fixed		Fixed::operator+( Fixed const & obj ) 
+{
+	// this->_fixed = this->_fixed + f._fixed;
+	// return (*this);
+	return Fixed(this->toFloat() + obj.toFloat());
+}
+
+Fixed		Fixed::operator-( Fixed const & obj )
+{
+	// this->_fixed = this->_fixed - f._fixed;
+	// return (*this);
+	return Fixed(this->toFloat() - obj.toFloat());
+}
+
+Fixed		Fixed::operator*( Fixed const & obj )
+{
+	return (Fixed(this->toFloat() * obj.toFloat()));
+}
+
+Fixed		Fixed::operator/( Fixed const & obj )
+{
+	 if (obj._fixed != 0)
+		return Fixed(this->toFloat() / obj.toFloat());
+	 return (*this);
+}
+
+Fixed &		Fixed::operator++()
+{
+	this->_fixed++;
+	return (*this);
+}
+Fixed		Fixed::operator++(int)
+{
+	Fixed temp = *this;
+	++*this;
+	return temp;
+}
+Fixed &		Fixed::operator--()
+{
+	_fixed--;
+	return (*this);
+}
+Fixed		Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	--(*this);
+	return temp;
+}
+
+Fixed &	Fixed::min(Fixed & obj1, Fixed & obj2)
+{
+	return obj1.getRawBits() > obj2.getRawBits() ? obj2 : obj1;
+}
+Fixed	& Fixed::max(Fixed &obj1, Fixed &obj2)
+{
+	return obj1.getRawBits() <obj2.getRawBits() ?obj2 :obj1;
+}
+const	Fixed & Fixed::min(const Fixed & obj1, const Fixed &obj2)
+{
+	return obj1.getRawBits() >obj2.getRawBits() ?obj2 :obj1;
+}
+const	Fixed & Fixed::max(const Fixed &obj1, const Fixed &obj2)
+{
+	return obj1.getRawBits() <obj2.getRawBits() ? obj2 : obj1;
 }
