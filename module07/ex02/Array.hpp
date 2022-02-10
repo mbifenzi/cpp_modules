@@ -3,6 +3,8 @@
 #define ARRAY_H
 
 #include <iostream>
+#include <string>
+#include <exception>
 
 template <typename T>
 class Array
@@ -10,12 +12,22 @@ class Array
     private:
         T *_array;
         unsigned int _n;
-    public;
-    Array();
-    Array(unsigned int n);  
-    Array(Array<T> const& obj);
-    Array   operator=(Array<T> const& obj);
-    ~array();
+    public:
+		Array();
+		Array(unsigned int n);
+		Array(Array<T> const& obj);
+		Array<T>   operator=(Array<T> const& obj);
+		Array<T>    Array<T>::operator[](unsigned int n) const
+
+		class invalidIndexException : public std::exception
+		{
+			const char* what() const throw()
+			{
+				return("Out Of Range Exception\n");
+			}
+		}
+		Array<T>    Array<T>::operator[](Array<T> const& obj);
+		~array();
 };
 
 template <typename T>
@@ -32,23 +44,33 @@ Array<T>::Array(unsigned int n) : _n(n)
 template <typename T>
 Array<T>::Array(Array<T> const& obj)
 {
-    this->_array = new T[obj..n];
-    for(int i; i < obj.n; i++)
-    {
-        this->_array = obj._array[i];
-    }
+	this->_array = new T[obj.n];
+	for(int i; i < obj.n; i++)
+	{
+		this->_array = obj._array[i];
+	}
 }
 
 template <typename T>
 Array<T>    Array<T>::operator=(Array<T> const& obj)
 {
-    this->_array = new T[obj..n];
+    this->_array = new T[obj.n];
     for(int i; i < obj.n; i++)
     {
         this->_array = obj._array[i];
     }
+}
 
+
+
+template <typename T>
+Array<T>    Array<T>::operator[](unsigned int n) const
+{
+	if (_n < n)
+	{
+		throw(invalidIndexException());
+	}
+	return(this->_array[n]);
 }
 
 #endif
-// 378
