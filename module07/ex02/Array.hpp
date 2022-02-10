@@ -17,23 +17,28 @@ class Array
 		Array(unsigned int n);
 		Array(Array<T> const& obj);
 		Array<T>   operator=(Array<T> const& obj);
-		Array<T>    Array<T>::operator[](unsigned int n) const
-
+		Array<T>   operator[](unsigned int n) const;
+		unsigned int	size() const;
 		class invalidIndexException : public std::exception
 		{
 			const char* what() const throw()
 			{
 				return("Out Of Range Exception\n");
 			}
-		}
-		Array<T>    Array<T>::operator[](Array<T> const& obj);
-		~array();
+		};
+		~Array();
 };
 
 template <typename T>
 Array<T>::Array() : _array(NULL)
 {
 }
+
+template <typename T>
+Array<T>::~Array()
+{
+}
+
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _n(n)
@@ -44,24 +49,22 @@ Array<T>::Array(unsigned int n) : _n(n)
 template <typename T>
 Array<T>::Array(Array<T> const& obj)
 {
-	this->_array = new T[obj.n];
-	for(int i; i < obj.n; i++)
+	this->_array = new T[obj._n];
+	for(unsigned int i = 0; i < obj._n; i++)
 	{
-		this->_array = obj._array[i];
+		this->_array[i] = obj._array[i];
 	}
 }
 
 template <typename T>
 Array<T>    Array<T>::operator=(Array<T> const& obj)
 {
-    this->_array = new T[obj.n];
-    for(int i; i < obj.n; i++)
+    this->_array._n = new T[obj._n];
+    for(unsigned int i = 0; i < obj.n; i++)
     {
-        this->_array = obj._array[i];
+        this->_array[i] = obj._array[i];
     }
 }
-
-
 
 template <typename T>
 Array<T>    Array<T>::operator[](unsigned int n) const
@@ -71,6 +74,12 @@ Array<T>    Array<T>::operator[](unsigned int n) const
 		throw(invalidIndexException());
 	}
 	return(this->_array[n]);
+}
+
+template <typename T>
+unsigned int	Array<T>::size() const
+{
+	return(this->_n);
 }
 
 #endif
