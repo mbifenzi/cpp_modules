@@ -17,9 +17,9 @@ class Array
 		Array(unsigned int n);
 		Array(Array<T> const& obj);
 		Array<T>   operator=(Array<T> const& obj);
-		bool   operator!=(int* const& number);
-		Array<T>   operator[](unsigned int n);
-		const T& operator[]( unsigned int n ) const;
+		bool    operator!=(int* const& number);
+		T& operator[](unsigned int n);
+		T& operator[]( unsigned int n ) const;
 		unsigned int	size() const;
 		class invalidIndexException : public std::exception
 		{
@@ -32,7 +32,7 @@ class Array
 };
 
 template <typename T>
-Array<T>::Array() : _array(NULL)
+Array<T>::Array() : _array(0)
 {
 }
 
@@ -43,9 +43,9 @@ Array<T>::~Array()
 
 
 template <typename T>
-Array<T>::Array(unsigned int n) : _n(n)
+Array<T>::Array(unsigned int n) : _n(n) 
 {
-    _array = new T[n];
+    this->_array = new T[n];
 }
 
 template <typename T>
@@ -70,18 +70,18 @@ Array<T>    Array<T>::operator=(Array<T> const& obj)
 }
 
 template <typename T>
-bool    Array<T>::operator!=(int* const& obj)
+bool    Array<T>::operator!=(int* const& number)
 {
 	for(int i = 0; i < MAX_VAL; i++)
 	{
-		if (this->_array[i] != obj._array[i])
+		if (this->_array[i] != number[i])
 			return (true);
 	}
 }
 template <typename T>
-Array<T>    Array<T>::operator[](unsigned int n)
+T&    Array<T>::operator[](unsigned int n)
 {
-	if (_n < n)
+	if (_n <= n)
 	{
 		throw(invalidIndexException());
 	}
@@ -89,9 +89,9 @@ Array<T>    Array<T>::operator[](unsigned int n)
 }
 
 template <typename T>
-const T&	Array<T>::operator[]( unsigned int n ) const
+T&	Array<T>::operator[]( unsigned int n ) const
 {
-	if (_n < n)
+	if (_n <= n)
 	{
 		throw(invalidIndexException());
 	}
