@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
-
+#define MAX_VAL 750
 template <typename T>
 class Array
 {
@@ -17,7 +17,9 @@ class Array
 		Array(unsigned int n);
 		Array(Array<T> const& obj);
 		Array<T>   operator=(Array<T> const& obj);
-		Array<T>   operator[](unsigned int n) const;
+		bool   operator!=(int* const& number);
+		Array<T>   operator[](unsigned int n);
+		const T& operator[]( unsigned int n ) const;
 		unsigned int	size() const;
 		class invalidIndexException : public std::exception
 		{
@@ -60,14 +62,34 @@ template <typename T>
 Array<T>    Array<T>::operator=(Array<T> const& obj)
 {
     this->_array._n = new T[obj._n];
-    for(unsigned int i = 0; i < obj.n; i++)
+    for(unsigned int i = 0; i < obj._n; i++)
     {
         this->_array[i] = obj._array[i];
     }
+	return(*this);
 }
 
 template <typename T>
-Array<T>    Array<T>::operator[](unsigned int n) const
+bool    Array<T>::operator!=(int* const& obj)
+{
+	for(int i = 0; i < MAX_VAL; i++)
+	{
+		if (this->_array[i] != obj._array[i])
+			return (true);
+	}
+}
+template <typename T>
+Array<T>    Array<T>::operator[](unsigned int n)
+{
+	if (_n < n)
+	{
+		throw(invalidIndexException());
+	}
+	return(this->_array[n]);
+}
+
+template <typename T>
+const T&	Array<T>::operator[]( unsigned int n ) const
 {
 	if (_n < n)
 	{
