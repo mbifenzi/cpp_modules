@@ -6,11 +6,12 @@
 /*   By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 16:17:22 by mbifenzi          #+#    #+#             */
-/*   Updated: 2022/01/07 00:41:46 by mbifenzi         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:16:42 by mbifenzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
+
 
 Karen::Karen()
 {
@@ -45,7 +46,8 @@ void	Karen::error(void)
 void    Karen::complain(string level)
 {
     string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void    (Karen::*ptr[4])(void);
+    void	(Karen::*ptr[4])(void);
+	
     ptr[0] = &Karen::debug;
     ptr[1] = &Karen::info;
     ptr[2] = &Karen::warning;

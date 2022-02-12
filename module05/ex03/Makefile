@@ -6,7 +6,7 @@
 #    By: mbifenzi <mbifenzi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 19:00:30 by mbifenzi          #+#    #+#              #
-#    Updated: 2022/01/18 04:27:10 by mbifenzi         ###   ########.fr        #
+#    Updated: 2022/02/12 19:09:33 by mbifenzi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ all :	$(NAME)
 bonus : $(BONUS_NAME)
 		
 $(NAME): $(SRC)
-		@clang++ -Wall -Wextra -Werror $(SRC) -o $(NAME) -fsanitize=address -g
+		@c++ -Wall -Wextra -Werror -std=c++98 $(SRC) -o $(NAME) -fsanitize=address -g
 
 clean:
 	@rm -f $(OBJECT)
