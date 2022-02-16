@@ -17,8 +17,10 @@ class Span
         Span(Span const& obj);
         Span&    operator=(Span const& obj);
         ~Span();
-        void    addNumber(int n);
-        void    spamSpan(int n);
+        void	addNumber(int n);
+        void	spamSpan(int n);
+        int		shortestSpan();
+        int		longestSpan();
         std::vector<int>    getArray();
 };
 
